@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" href="Images/logo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/scriptsproducts.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/stylesproducts.css" />
+  <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet" />
+  <title>Tee's Home Renovation Services</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning " id="navbar">
+    <a class="navbar-brand" href="index.html">
+      <h1>Tee's Home Renovation Services</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Log in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Sign up</a>
+        </li>
+      </ul>
+      <form action="https://www.google.com/search" method="Get" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="opacity: 0.8;" id="navbar">
+    <a class="navbar-brand" href="index.html">
+      <img src="Images/logo.jpeg" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html#about">About Us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#serve">Our Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#contacts">Contact Us</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+            Services & Extra's
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item " href="products.html#kitchen">Kitchen</a>
+            <a class="dropdown-item " href="products.html#bathroom">Bathroom</a>
+            <a class="dropdown-item " href="products.html#patio">Patio</a>
+            <a class="dropdown-item " href="products.html#stone">Stone</a>
+            <a class="dropdown-item " href="products.html#floor">Floorings</a>
+            <a class="dropdown-item " href="products.html#finish">Extra's</a>
+
+
+          </div>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <div style="padding: 1%;" id="cart">
+    <a class="btn float-right " href="#" data-toggle="modal" data-target="#exampleModal"
+      style="font-size: 30px; color: red;">SHOPPING CART
+      <img src="Images/shoppingCart.svg" alt="logo">
+    </a>
+  </div>
+
+  <div class="container">
+    <div class="container" id="finishingHeading">
+      <h2 class="intro"></h2>
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">SHOPPING CART</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table id="newOrderList" class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>DELETE</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+              </table>
+
+
+              <hr>
+              <div id="showOrders" class="container jumbotron shadow-lg p-4 mb-4 bg-white">
+                <h2></h2>
+                <hr>
+                <p>Product Name : <span id="productOrdered"></span></p>
+                <p>Quantity : <span id="quantityOrdered"></span></p>
+                <p>Total amount : <span id="totalPrice"></span></p>
+
+              </div>
+
+              <hr>
+
+              <div id="showTotal" class="card shadow-lg p-4 mb-4 bg-white">
+                <div class="card-body">
+                  <h3 class="card-title intro">TOTAL AMOUNT</h3>
+                  <p class="card-text"><span id="totalPay"></span></p>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" id="checkoutBtn" class="btn btn-warning" data-dismiss="modal">CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- Start of packages -->
+  <div style="padding: 2%;" id="finish">
+    <h1 class="display-5">KITCHEN</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card img-thumbnail" style="width:250px">
+          <img class="card-img-top rounded" src="Images/kitchen6.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">Small Kitchen Package</h4>
+
+            <p class="card-text">Price depends on sq.ft of kitchen. Starts at $2,000 for 10x10.<span class="text-muted"></span></p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#demo1">MORE</a>
+
+            <div id="demo1" class="collapse multi-collapse">
+              <hr>
+              <p>Description: 10x10 Kitchen. Kitchen Package includes; flooring, countertop removal & installation
+                molding, cabinets removal & installation, & more. </p>
+              <p>Top Product & Supplier: Ikea, Home Depot, Lowes, or private companies.</p>
+              <p></p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong">ORDER</a>
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Small Kitchen Package</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="tileForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityTile" name="quantity1" required>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <!-- <a href="cart.html" id="tileBtn" class="btn btn-warning" type="submit">ADD TO CART</a> -->
+                      <button type="submit" id="smallBtn" class="btn btn-warning" data-dismiss="modal">ADD TO
+                        CART</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/kitchen7.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">All Black Kitchen</h4>
+
+            <p class="card-text">Price Starting at $5,000 and up.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#demo2">MORE</a>
+
+            <div id="demo2" class="collapse">
+              <hr>
+              <p>Description: Kitchen Package includes; flooring, countertop removal & installation
+                molding, cabinets removal & installation, & more. </p>
+              <p>Top Product & Supplier: Ikea, Home Depot, Lowes, or private companies.</p>
+              <hr>
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong1">ORDER</a>
+              <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">All Black Kitchen Package</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="blackForm">
+                        <div class="form-group">
+                          <label for="quantity2">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantity2" name="quantity2">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" id="blackBtn" class="btn btn-warning" data-dismiss="modal">ADD TO
+                        CART</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-3">
+        <div class="card img-thumbnail" style="width:250px">
+          <img class="card-img-top rounded" src="Images/kitchen9.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">Marble Kitchen Package</h4>
+
+            <p class="card-text">Price Starting at $9,000 and up. <span class="text-muted"></span></p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#demo3">MORE</a>
+
+            <div id="demo3" class="collapse">
+              <hr>
+              <p>Description: Kitchen Package includes; flooring, countertop removal & installation
+                 molding, cabinets removal & installation, & more. </p>
+              <p>Top Product & Supplier: Ikea, Home Depot, Lowes, & private companies.</p>
+              <hr>
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong3">ORDER</a>
+              <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Marble Kitchen Package</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="marbleForm">
+                        <div class="form-group">
+                          <label for="quantity3">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantity3" name="quantity3">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" id="marbleBtn" class="btn btn-warning" data-dismiss="modal">ADD TO
+                        CARD</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-3">
+        <div class="card img-thumbnail" style="width:250px">
+          <img class="card-img-top rounded" src="Images/kitchen10.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">Outdoor Kitchen & Grill</h4>
+
+            <p class="card-text">Price varies on sq.ft <span class="text-muted"></span></p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#demo">MORE</a>
+
+            <div id="demo" class="collapse">
+              <hr>
+              <p>Description: Kitchen Package includes; flooring, countertop removal & installation
+                molding, cabinets removal & installation, & more.</p>
+              <p>Top Product & Supplier: Ikea, Home Depot, Lowes, or private companies.</p>
+              <hr>
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong4">ORDER</a>
+              <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Outdoor Kitchen</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="outdoorForm">
+                        <div class="form-group">
+                          <label for="quantity4">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantity4" name="quantity4">
+                        </div>
+                      </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" id="outdoorBtn" class="btn btn-warning" data-dismiss="modal">ADD TO
+                        CART</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div style="padding: 2%;" id="equip">
+    <h1 id="hot4" class="display-5">BATHROOM</h1>
+    <div class="row">
+      <!-- Shower -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/bathroom6.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Shower</h4>
+
+            <p class="card-text">Price starting at $2,500.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#equip1">MORE</a>
+
+            <div id="equip1" class="collapse multi-collapse">
+              <hr />
+              <p>Description: White tiled & Black Frame shower</p>
+              <p>Top Product & Supplier: Ikea, Home Depot, Lowes, or private companies.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#equipment1">ORDER</a>
+              <div class="modal fade" id="equipment1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Shower
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="showerForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityEquip1" name="quantityEquip1" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="showerBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Shower Sliding Door -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/bathroom7.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Shower Sliding Door</h4>
+
+            <p class="card-text">Price : $600</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#equip2">MORE</a>
+
+            <div id="equip2" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Installation of sliding door for shower.
+              </p>
+              <p>Product or Supplier: Home Depot, Lowe's or private company.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#equipment2">ORDER</a>
+              <div class="modal fade" id="equipment2" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        sliding
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="slidingForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityEquip2" name="quantityEquip2" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="slidingBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bath Tub -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/bathroom8.jpeg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Bath Tub</h4>
+
+            <p class="card-text">Price starting at $500.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#equip3">MORE</a>
+
+            <div id="equip3" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Installing free standing tub or any tub of clients choice.</p>
+              <p>Product & Supplier: Clients choice.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#equipment3">ORDER</a>
+              <div class="modal fade" id="equipment3" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        tub
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="tubForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityEquip3" name="quantityEquip3" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="tubBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Bath -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/bathroom9.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Full Bathroom</h4>
+
+            <p class="card-text">Price starting at $4,000 and up.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#equip4">MORE</a>
+
+            <div id="equip4" class="collapse multi-collapse">
+              <hr />
+              <p>Description: This package is a full complete bathroom renovation.</p>
+              <p>Product & Supplies: Clients choice.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#equipment4">ORDER</a>
+              <div class="modal fade" id="equipment4" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Shovel
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="fullForm">
+                        <div class="form-group">
+                          <label for="quantity4">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityEquip4" name="quantityEquip4" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="fullBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div style="padding: 2%;" id="build">
+    <h1 id="hot" class="display-5">PATIO</h1>
+    <div class="row">
+
+      <!-- patio -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/patio3.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Simple Patio</h4>
+
+            <p class="card-text">Price starts at $500; Price varies on sq.ft.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#build1">MORE</a>
+
+            <div id="build1" class="collapse multi-collapse">
+              <hr />
+              <p>Description: This package includes, design, removal of any previous products, installing new products, and pavors.
+              </p>
+              <p>Product & Supplier: Home Depot, Lowe's, or Clients Choice.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#buildingProduct1">ORDER</a>
+              <div class="modal fade" id="buildingProduct1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Simple Patio
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="simpleForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityBuild1" name="quantityBuild1" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="simpleBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patio with fireplace       -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/patio4.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Patio with Fire pit</h4>
+
+            <p class="card-text">Price starting at $500 and up. Price varies on sq.ft.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#build2">MORE</a>
+
+            <div id="build2" class="collapse multi-collapse">
+              <hr />
+              <p>Description: This patio package includes a fire pit for clients.</p>
+              <p>Product & Supplier: Home Depot</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#buildingProduct2">ORDER</a>
+              <div class="modal fade" id="buildingProduct2" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Patio with Fire pit
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="blocksBtn">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityBuild2" name="quantityBuild2" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="blocksBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- End of Building Products -->
+  <hr>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <!-- STONE -->
+  <div style="padding: 2%;" id="fit">
+    <h1 id="hot1" class="display-5">STONE</h1>
+    <div class="row">
+
+      <!-- vennar stone -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/stone5.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Venner Stone</h4>
+
+            <p class="card-text">Price starting at $5.50 and up per square foot installed. 
+                                  NOTE: The price of stone generally falls between $35 and $50 per square foot</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#fit1">MORE</a>
+
+            <div id="fit1" class="collapse multi-collapse">
+              <hr />
+              <p>Description: This stone could last about 50 years.</p>
+              <p>Product & Supplier: Eldorado Stone</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#fittingProduct1">ORDER</a>
+              <div class="modal fade" id="fittingProduct1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Venner Stone
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="vennerForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityFit1" name="quantityFit1" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="vennerBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- End of STONE -->
+  <hr>
+  <!-- Start of FLOORINGS -->
+  <div style="padding: 2%;" id="electrical">
+    <h1 id="hot5" class="display-5">FLOORINGS</h1>
+    <div class="row">
+
+      <!-- floors -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/flooring2.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Porcelain Wood Tile</h4>
+
+            <p class="card-text">Price starting at $1.99 per sq.ft.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#porcelain1">MORE</a>
+
+            <div id="porcelain1" class="collapse multi-collapse">
+              <hr />
+              <p>Description: A nice sleek wood like floor.</p>
+              <p>Product & Supply: Home Depot, Lowe's Floor & Decor</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#porcelainProduct1">ORDER</a>
+              <div class="modal fade" id="porcelainProduct1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Porcelain Wood Tile
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="porcelainForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityPorcelain1" name="quantityPorcelain1" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="porcelainBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- natural wood        -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/flooring3.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Natural Wood</h4>
+
+            <p class="card-text">Price starting at $3.99 per sq.ft.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#wood2">MORE</a>
+
+            <div id="wood2" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Will include underlining of floor.</p>
+              <p>Product & Supplier: Home Depot, Lowe's, Floor & Decor. </p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#woodProduct2">ORDER</a>
+              <div class="modal fade" id="woodProduct2" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Natural Wood
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="woodForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityWood2" name="quantityWood2" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="woodBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/flooring4.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Tile</h4>
+
+            <p class="card-text">Price starting at $1.99 per sq.ft.</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#tile3">MORE</a>
+
+            <div id="tile3" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Regular Tile</p>
+              <p>Product & Supplier: Home Depot, Lowe's, Floor & Decor.</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#tileProduct3">ORDER</a>
+              <div class="modal fade" id="tileProduct3" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Tile
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="tileForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityTile3" name="quantityTile3" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="tileBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- End of FLOORINGS -->
+
+  <hr>
+  <!-- EXTRA'S -->
+  <div style="padding: 2%;" id="drain">
+    <h1 id="hot2" class="display-5">EXTRA'S</h1>
+    <div class="row">
+
+      <!-- Paint -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/paint3.png" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Painting</h4>
+
+            <p class="card-text">Price starting at $400; varies on room size.  </p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#paint1">MORE</a>
+
+            <div id="paint1" class="collapse multi-collapse">
+              <hr />
+              <p>Description: All sizes </p>
+              <p>Product: Home Depot</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#paintProduct1">ORDER</a>
+              <div class="modal fade" id="paintProduct1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Paint
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="apaintForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityPaint1" name="quantityPaint1" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="paintBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--     Trim    -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/trim1.jpeg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Trim</h4>
+
+            <p class="card-text">Price : Varies depending on the sizes and angles
+            </p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#trim2">MORE</a>
+
+            <div id="trim2" class="collapse multi-collapse">
+              <hr />
+              <p>Description: angle,bend,T</p>
+              <p>Supplier: Home Depot</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#trimProduct2">ORDER</a>
+              <div class="modal fade" id="trimProduct2" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Trim
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityTrim2" name="quantityTrim2" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="trimBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moulding -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/molding1.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Crown Moulding</h4>
+
+            <p class="card-text">Price : Varies with size and material type</p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#moulding3">MORE</a>
+
+            <div id="moulding3" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Sleek & Clean look for Ceiling edges.</p>
+              <p>Supplier: Home Depot</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#mouldingProduct3">ORDER</a>
+              <div class="modal fade" id="mouldingProduct3" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Ceiling Moulding
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="mouldingForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityMoulding3" name="quantityMoulding3" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="mouldingBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ceiling -->
+      <div class="col-md-3">
+        <div class="card" style="width:250px">
+          <img class="card-img-top rounded" src="Images/ceiling1.jpg" alt="Card image" style="width:100%" />
+          <div class="card-body">
+            <h4 class="card-title">Ceiling Designs</h4>
+
+            <p class="card-text">Price varies on ceiling size.
+
+
+            </p>
+
+            <a href="#" class="btn-outline-warning" data-toggle="collapse" data-target="#ceiling4">MORE</a>
+
+            <div id="ceiling4" class="collapse multi-collapse">
+              <hr />
+              <p>Description: Any design the clients would like.</p>
+              <p>Supplier: Home Depot</p>
+
+              <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#ceilingProduct4">ORDER</a>
+              <div class="modal fade" id="ceilingProduct4" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Ceiling Designs
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="ceilingForm">
+                        <div class="form-group">
+                          <label for="quantity1">Enter Quantity</label>
+                          <input type="number" class="form-control" id="quantityCeiling4" name="quantityCeiling4" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="submit" id="ceilingBtn" class="btn btn-warning" data-dismiss="modal">
+                        ADD TO CART
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+
+  <hr>
+</body>
+
+</html>
